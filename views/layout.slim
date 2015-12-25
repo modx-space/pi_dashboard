@@ -8,15 +8,18 @@ html
     script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"
     / Bootstrap core JavaScript
     script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    / Chart.js
+    script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"
   
   body
     div class="jumbotron"
       div class="container page-header center-block"
-        h1 class="text-center" 树莓派监控面板
-    
+        h1 class="text-center"
+          a href="/" 树莓派监控面板
+
     div class="container"
       == yield
-            
+
     footer class="footer"
       div class="container"
         p class="text-muted text-center" Copyright &copy; 2015 Shawzt
