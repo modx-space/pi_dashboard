@@ -5,9 +5,16 @@ div class="row"
     canvas id="canvas"
 
 javascript:
-  var fakeData = function(){ return Math.round(Math.random()*100)};
+  var data = #{{ @data.to_json }};
+  var time = [];
+  var temp = [];
+  for (var item in data) {
+    time.push(new Date(data[item].created_at).toISOString().replace('T',' ').substr(0,19));
+    temp.push(data[item].temp);
+  }
+  
   var temperatureData = {
-    labels: ["2015/12/19","2015/12/20","2015/12/21","2015/12/22","2015/12/23","2015/12/24","2015/12/25"],
+    labels: time,
     datasets: [{
       label: "Temperature Data",
       fillColor: "rgba(151,187,205,0.2)",
@@ -16,7 +23,7 @@ javascript:
       pointStrokeColor: "#fff",
       pointHighlightFill: "#fff",
       pointHighlightStroke: "rgba(151,187,205,1)",
-      data: [fakeData(),fakeData(),fakeData(),fakeData(),fakeData(),fakeData(),fakeData()]
+      data: temp
     }]
   }
   window.onload = function(){
@@ -24,6 +31,6 @@ javascript:
     window.myLine = new Chart(ctx).Line(temperatureData, { 
       responsive: true,
       scaleLabel: "<%=value%>℃",
-      tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>℃"
+      tooltipTemplate: "[<%if (label){%><%=label%>]<%}%> <%= value %>℃"
     });
   }
