@@ -6,6 +6,7 @@ require './schema'
 require './app'
 
 set :environment, :development
+set :server, :puma
 set :run, false
 set :raise_errors, true
 
