@@ -9,7 +9,7 @@ javascript:
   var time = [];
   var temp = [];
   for (var item in data) {
-    time.push(new Date(data[item].created_at).toISOString().replace('T',' ').substr(0,19));
+    time.push(new Date(data[item].created_at).toLocaleString());
     temp.push(data[item].temp);
   }
   
