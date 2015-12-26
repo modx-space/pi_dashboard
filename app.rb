@@ -10,7 +10,7 @@ DISK_STATUS_NAME_MAP = {
 }.freeze
 
 SERVICES = {
-  "[smbd]"      => "NAS",
+  "[s]mbd"      => "NAS",
   "[p]uma"      => "监控面板",
   "[c]lockwork" => "温度采集"
 }.freeze
