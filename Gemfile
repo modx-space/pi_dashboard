@@ -21,3 +21,6 @@ gem 'data_mapper'
 
 # PostgreSQL Adapter for DataMapper
 gem 'dm-postgres-adapter'
+
+# daemonization
+gem 'daemons'

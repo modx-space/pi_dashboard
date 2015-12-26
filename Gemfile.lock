@@ -15,6 +15,7 @@ GEM
     clockwork (1.2.0)
       activesupport
       tzinfo
+    daemons (1.2.3)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -103,6 +104,7 @@ PLATFORMS
 
 DEPENDENCIES
   clockwork (~> 1.2)
+  daemons
   data_mapper
   dm-postgres-adapter
   pg
