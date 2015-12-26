@@ -1,0 +1,14 @@
+div class="row"
+  h2 class="text-center"
+    span class="label label-success" 存储使用统计
+  div class="col-md-offset-1 col-md-10"
+    table class="table table-hover"
+      thead
+        tr
+        - @headers.each do |name, i|
+            th = name
+      tbody
+        - @items.each do |item|
+          tr
+            - item.split(" ").each do |d|
+              td = d

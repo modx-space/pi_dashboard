@@ -10,3 +10,11 @@ get '/temperature' do
   @data = Temperature.all(:created_at => (startTime..endTime), :order => [:id.asc])
   slim :temperature
 end
+
+get '/disk' do
+  info = `df -h / /media/nas/`.split("\n")
+  @headers = info.shift.split(" ")
+  @headers.pop
+  @items = info
+  slim :disk
+end
