@@ -16,6 +16,9 @@ html
       div class="container page-header center-block"
         h1 class="text-center"
           a href="/" 树莓派监控面板
+        div class="text-center"
+          - @info.each do |msg|
+            span class="label label-success" = msg
 
     div class="container"
       == yield
