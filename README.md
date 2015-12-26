@@ -1,14 +1,14 @@
 # Raspberry Dashboard
----
 
-## `Description:`
+
+**`Description:`**
 #### This project is for monitoring Raspberry Pi. And it helps on the following things:
 
 + **monitor and show machine temperature**
 + **monitor and show disk usage**
 + **monitor and show running services**
 
-## `Technology:`
+**`Technology:`**
 #### This project is built by using the following main things:
 
 + **[Ruby][1]**
@@ -21,7 +21,7 @@ more details, please see Gemfile.
 [2]: http://www.sinatrarb.com/
 [3]: https://github.com/tomykaira/clockwork
 
-## `Usage`
+**`Usage:`**
 
 + **local development**
 
