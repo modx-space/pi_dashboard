@@ -40,7 +40,7 @@ get '/services' do
   @services_with_status = {}
   SERVICES.each do |k,v|
     pid = `ps aux | grep "#{k}" | awk '{print $2}'`
-    @services_with_status[v] = (pid.empty? ? "正常" : "停止")
+    @services_with_status[v] = (pid.empty? ? "停止" : "正常")
   end
 
   slim :services
