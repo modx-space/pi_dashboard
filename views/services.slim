@@ -1,0 +1,19 @@
+div class="row"
+  h2 class="text-center"
+    span class="label label-success" 服务状态列表
+  div class="col-md-offset-1 col-md-10"
+    table class="table table-hover table-bordered"
+      thead
+        tr
+          th 名称
+          th 状态
+      tbody
+        - @services_with_status.each do |k,v|
+          tr
+            td 
+              strong = k
+            td
+              - if v == "正常"
+                span class="label label-success" = v
+              - else
+                span class="label label-warning" = v

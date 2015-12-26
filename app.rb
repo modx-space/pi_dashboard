@@ -9,6 +9,12 @@ DISK_STATUS_NAME_MAP = {
   "Mounted"    => "挂载点"
 }.freeze
 
+SERVICES = {
+  "[smbd]"      => "NAS",
+  "[p]uma"      => "监控面板",
+  "[c]lockwork" => "温度采集"
+}.freeze
+
 get '/' do
   slim :index
 end
@@ -17,6 +23,7 @@ get '/temperature' do
   startTime = DateTime.now.strftime("%F")
   endTime   = startTime.next
   @data = Temperature.all(:created_at => (startTime..endTime), :order => [:id.asc])
+
   slim :temperature
 end
 
@@ -25,5 +32,16 @@ get '/disk' do
   @headers = []
   info.shift.split(" ").each { |name| @headers << DISK_STATUS_NAME_MAP[name] }
   @items = info
+
   slim :disk
+end
+
+get '/services' do
+  @services_with_status = {}
+  SERVICES.each do |k,v|
+    pid = `ps aux | grep "#{k}" | awk '{print $2}'`
+    @services_with_status[v] = (pid.empty? ? "正常" : "停止")
+  end
+
+  slim :services
 end
