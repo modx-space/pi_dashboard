@@ -48,5 +48,5 @@ end
 
 before do
   /(?<time>\d{2}\:\d{2}(\:\d{2})?)(\s*up\s*)?(?<run_time>(\d\s*days?\,\s*)?\d{2}\:\d{2})(\,\s*)?(?<connection>(\d*\susers?)?)(\,\s*)?load\saverages?\:\s*(?<load>[\d\.\,\s]*)/ =~ `uptime`
-  @info = ["系统时间: #{time}", "已运行: #{run_time.rstrip.chop}", "连接数: #{connection}", "负载: #{load.chop}"]
+  @info = ["系统时间: #{time.strip}", "已运行: #{run_time.strip}", "连接数: #{connection}", "负载: #{load.strip}"]
 end
