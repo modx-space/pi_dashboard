@@ -21,7 +21,7 @@ end
 
 get '/temperature' do
   startTime = DateTime.now.strftime("%F")
-  endTime   = startTime.next
+  endTime   = DateTime.now.next.strftime("%F")
   @data = Temperature.all(:created_at => (startTime..endTime), :order => [:id.asc])
 
   slim :temperature
