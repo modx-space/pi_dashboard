@@ -1,6 +1,6 @@
 require 'data_mapper'
 
-DataMapper.setup(:default, 'postgres://localhost/pi')
+DataMapper.setup(:default, 'postgres://postgres@localhost/pi')
 
 class Temperature
   include DataMapper::Resource
