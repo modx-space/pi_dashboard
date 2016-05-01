@@ -36,7 +36,7 @@ pidfile "#{root}/tmp/pids/puma.pid"
 # Use "path" as the file to store the server info state. This is
 # used by "pumactl" to query and control the server.
 #
-# state_path "#{root}/tmp/pids/puma.state"
+state_path "#{root}/tmp/pids/puma.state"
 
 # Redirect STDOUT and STDERR to files specified. The 3rd parameter
 # ("append") specifies whether the output is appended, the default is
@@ -56,7 +56,7 @@ stdout_redirect "#{root}/log/stdout", "#{root}/log/stderr", true
 #
 # The default is "0, 16".
 #
-# threads 0, 16
+threads 0, 8
 
 # Bind the server to "url". "tcp://", "unix://" and "ssl://" are the only
 # accepted protocols.
@@ -120,7 +120,7 @@ bind 'tcp://0.0.0.0:8080'
 # is preserved across a phased-restart. (incompatible with preload_app)
 # (off by default)
 
-# prune_bundler
+prune_bundler
 
 # Preload the application before starting the workers; this conflicts with
 # phased restart feature. (off by default)
