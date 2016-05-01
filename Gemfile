@@ -25,6 +25,8 @@ gem 'dm-postgres-adapter'
 # daemonization
 gem 'daemons'
 
+gem 'rake'
+
 group :development do
   # manage Procfile-based applications
   gem 'foreman'

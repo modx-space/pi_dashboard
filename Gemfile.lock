@@ -142,6 +142,7 @@ DEPENDENCIES
   foreman
   pg
   puma
+  rake
   sinatra (~> 1.4)
   sinatra-contrib
   slim (~> 3.0)
