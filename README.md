@@ -31,3 +31,12 @@ Raspberry Dashboard
   ```
   cap staging deploy
   ```
+
+#### UI:
++ ![Home Page](/public/assets/images/homepage.png)
+
++ ![Temperature Page](/public/assets/images/temperature_analysis.png)
+
++ ![Storage Page](/public/assets/images/storage_analysis.png)
+
++ ![Service Page](/public/assets/images/service.png)
