@@ -28,10 +28,13 @@ get '/temperature' do
 end
 
 get '/disk' do
-  info = `df -h / /media/nas/`.split("\n")
+  info = `df -h / /nas/`.split("\n")
   @headers = []
   info.shift.split(" ").each { |name| @headers << DISK_STATUS_NAME_MAP[name] }
-  @items = info
+  @items = info.each do |mount|
+    mount.gsub!("/dev/root", "Raspberry")
+    mount.gsub!("/dev/sda2", "NAS")
+  end
 
   slim :disk
 end
